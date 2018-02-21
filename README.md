@@ -1,4 +1,4 @@
-#Getting and Cleaning Data, Final Project (Coursera) Submission
+# Getting and Cleaning Data, Final Project (Coursera) Submission
 https://www.coursera.org/learn/data-cleaning/home/welcome
 
 *Content comes from the below data set:*
