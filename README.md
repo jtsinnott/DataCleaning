@@ -8,5 +8,6 @@ For feature descriptions, refer to features_info.txt.  The tidy.txt data set onl
 
 *Original data content comes from the below data set:*
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
 [Original README](README.txt)
 
