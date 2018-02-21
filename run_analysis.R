@@ -32,6 +32,7 @@ train_Y <- read_table("./train/y_train.txt", col_names=FALSE)
 y <- rbind(train_Y, test_Y)
 X <- rbind(train_X, test_X)
 
+#4 - use names provided in features.txt
 features <- read_delim("features.txt", delim=" ", col_names = FALSE)
 names(X) <- features$X2
 
@@ -43,12 +44,8 @@ X <- X[,mean_or_std]
 activities <- read_delim("activity_labels.txt", delim=" ", col_names = FALSE)
 y <- merge(y, activities, by = "X1")
 
-#4 - clean up the variable (column) names a bit, but still use names provided in features.txt
-names(X) <- str_replace_all(names(X), c("\\(" = "", "\\)" = ""))
-
 #5 - a tidy data set of just the mean for each measurement/subject
 X_means <- X[,grepl("mean", names(X))]
-names(X_means) <- str_replace(names(X_means), "-mean", "")
 tidy <- cbind(y, X_means)
 tidy_names <- names(tidy)
 tidy_names[1:2] <- c("subject_id", "activity")
