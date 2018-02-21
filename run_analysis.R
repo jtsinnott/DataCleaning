@@ -49,6 +49,10 @@ names(X) <- str_replace_all(names(X), c("\\(" = "", "\\)" = ""))
 #5 - a tidy data set of just the mean for each measurement/subject
 X_means <- X[,grepl("mean", names(X))]
 names(X_means) <- str_replace(names(X_means), "-mean", "")
+tidy <- cbind(y, X_means)
+tidy_names <- names(tidy)
+tidy_names[1:2] <- c("subject_id", "activity")
+names(tidy) <- tidy_names
 
 # export data set for submittal
-write.table(X_means, file="./means.txt", row.names = FALSE)
+write.table(tidy, file="./tidy.txt", row.names = FALSE)
